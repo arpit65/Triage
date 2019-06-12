@@ -1,11 +1,10 @@
 package com.hackathon.triage.apiCaller;
 
-import com.hackathon.triage.Domain.JiraAccount;
-import com.hackathon.triage.Domain.Project;
+import com.hackathon.triage.domain.JiraAccount;
+import com.hackathon.triage.domain.Project;
 import com.hackathon.triage.config.JiraConfig;
 import com.hackathon.triage.parser.ProjectParser;
 import com.hackathon.triage.scheduler.AbstractBaseScheduler;
-import com.hackathon.triage.scheduler.IScheduler;
 import com.hackathon.triage.service.ComponentService;
 import com.hackathon.triage.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;

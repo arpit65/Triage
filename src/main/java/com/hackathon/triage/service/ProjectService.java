@@ -1,6 +1,6 @@
 package com.hackathon.triage.service;
 
-import com.hackathon.triage.Domain.Project;
+import com.hackathon.triage.domain.Project;
 import com.hackathon.triage.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

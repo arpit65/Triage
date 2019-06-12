@@ -1,6 +1,6 @@
 package com.hackathon.triage.config;
 
-import com.hackathon.triage.Domain.JiraAccount;
+import com.hackathon.triage.domain.JiraAccount;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

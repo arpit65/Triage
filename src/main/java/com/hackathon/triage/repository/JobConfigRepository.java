@@ -1,6 +1,6 @@
 package com.hackathon.triage.repository;
 
-import com.hackathon.triage.Domain.JobConfig;
+import com.hackathon.triage.domain.JobConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

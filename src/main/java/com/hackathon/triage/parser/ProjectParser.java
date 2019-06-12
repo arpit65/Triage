@@ -1,8 +1,8 @@
 package com.hackathon.triage.parser;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.hackathon.triage.Domain.Component;
-import com.hackathon.triage.Domain.Project;
+import com.hackathon.triage.domain.Component;
+import com.hackathon.triage.domain.Project;
 import com.hackathon.triage.util.JsonUtil;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class ProjectParser {
     public static Project parseJson(String inJson) {
         Map<String, Object> jsonObject = JsonUtil.fromJson(inJson, new TypeReference<Map<String, Object>>() {
         });
-        int id = Integer.parseInt(String.valueOf(jsonObject.get("id")));
+        int id = Integer.parseInt(String.valueOf(jsonObject.get("developerId")));
         String description = (String) jsonObject.get("description");
 
         String name = (String) jsonObject.get("name");
@@ -26,7 +26,7 @@ public class ProjectParser {
         List<Map<String, Object>> components = (List<Map<String, Object>>) jsonObject.get("components");
         List<Component> componentList = new ArrayList<>();
         for (Map<String, Object> component : components) {
-            int componentId = Integer.parseInt(String.valueOf(component.get("id")));
+            int componentId = Integer.parseInt(String.valueOf(component.get("developerId")));
             String componentName = (String) component.get("name");
             Component tempComponent = new Component(componentId, componentName, Collections.emptyList());
             componentList.add(tempComponent);

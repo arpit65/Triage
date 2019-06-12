@@ -1,4 +1,4 @@
-package com.hackathon.triage.Domain;
+package com.hackathon.triage.domain;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.hackathon.triage.util.StringConstants.ADAPTER;
 import static com.hackathon.triage.util.StringConstants.AGVSCHEDULER;
 import static com.hackathon.triage.util.StringConstants.ASCSCHEDULER;
 import static com.hackathon.triage.util.StringConstants.AUTOSHUTTLE;
@@ -25,7 +24,6 @@ import static com.hackathon.triage.util.StringConstants.GENERAL;
 import static com.hackathon.triage.util.StringConstants.PRIMEROUTE;
 import static com.hackathon.triage.util.StringConstants.RAILTZDECKER;
 import static com.hackathon.triage.util.StringConstants.REEFER;
-import static com.hackathon.triage.util.StringConstants.SCHEDULER;
 import static com.hackathon.triage.util.StringConstants.SEMIAUTOMATED;
 import static com.hackathon.triage.util.StringConstants.SIDELOADINGCRANE;
 import static com.hackathon.triage.util.StringConstants.TECH;

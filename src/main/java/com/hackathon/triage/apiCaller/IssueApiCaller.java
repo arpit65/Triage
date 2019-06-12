@@ -1,7 +1,7 @@
 package com.hackathon.triage.apiCaller;
 
-import com.hackathon.triage.Domain.Issue;
-import com.hackathon.triage.Domain.JiraAccount;
+import com.hackathon.triage.domain.Issue;
+import com.hackathon.triage.domain.JiraAccount;
 import com.hackathon.triage.config.JiraConfig;
 import com.hackathon.triage.parser.IssueParser;
 import com.hackathon.triage.parser.MaxRecordsParser;
@@ -60,9 +60,9 @@ public class IssueApiCaller extends AbstractBaseScheduler {
 
             Map<Integer, List<Issue>> componentIssueMapList = IssueParser.getComponentIssueMapList();
 
-            List<com.hackathon.triage.Domain.Component> componentList = componentService.findAll();
+            List<com.hackathon.triage.domain.Component> componentList = componentService.findAll();
 
-            for (com.hackathon.triage.Domain.Component c : componentList) {
+            for (com.hackathon.triage.domain.Component c : componentList) {
                 if (componentIssueMapList.containsKey(c.getComponentId())) {
                     c.getIssues().addAll(componentIssueMapList.get(c.getComponentId()));
                 }

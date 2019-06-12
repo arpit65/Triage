@@ -1,4 +1,4 @@
-package com.hackathon.triage.Domain;
+package com.hackathon.triage.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,12 +1,12 @@
 package com.hackathon.triage.parser;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.hackathon.triage.Domain.Component;
-import com.hackathon.triage.Domain.Issue;
-import com.hackathon.triage.Domain.IssueType;
-import com.hackathon.triage.Domain.Status;
-import com.hackathon.triage.Domain.StatusCategory;
-import com.hackathon.triage.Domain.User;
+import com.hackathon.triage.domain.Component;
+import com.hackathon.triage.domain.Issue;
+import com.hackathon.triage.domain.IssueType;
+import com.hackathon.triage.domain.Status;
+import com.hackathon.triage.domain.StatusCategory;
+import com.hackathon.triage.domain.User;
 import com.hackathon.triage.util.JsonUtil;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class IssueParser {
         });
         List<Map<String, Object>> issues = (List<Map<String, Object>>) jsonObject.get("issues");
         for(Map<String, Object> issue : issues) {
-            int issueId = Integer.parseInt(String.valueOf(issue.get("id")));
+            int issueId = Integer.parseInt(String.valueOf(issue.get("developerId")));
             String argoNumber = (String) issue.get("key");
             String description = (String) issue.get("description");
             Map<String, Object> fields = (Map<String, Object>) issue.get("fields");
@@ -41,12 +41,12 @@ public class IssueParser {
 
             Map<String, Object> status = (Map<String, Object>) issue.get("status");
             String statusName = (String) status.get("name");
-            int statusId = Integer.parseInt(String.valueOf(status.get("id")));
+            int statusId = Integer.parseInt(String.valueOf(status.get("developerId")));
             String statusDescription = (String) status.get("description");
             Map<String, Object> category = (Map<String, Object>) status.get("statusCategory");
             String categoryKey = (String) category.get("key");
             String categoryName = (String) category.get("name");
-            int categoryId = Integer.parseInt(String.valueOf(category.get("id")));
+            int categoryId = Integer.parseInt(String.valueOf(category.get("developerId")));
             StatusCategory statusCategory = new StatusCategory(categoryId, categoryKey, categoryName);
             Status newStatus = new Status(statusId, statusName, statusDescription, statusCategory);
 
@@ -57,7 +57,7 @@ public class IssueParser {
             String issueTypeName = (String) issueType.get("name");
             IssueType issueTypeEnum = IssueType.valueOf(issueTypeName);
             Map<String, Object> priority = (Map<String, Object>) issue.get("priority");
-            int priorityId = Integer.parseInt(String.valueOf(priority.get("id")));
+            int priorityId = Integer.parseInt(String.valueOf(priority.get("developerId")));
 
             System.out.println("Inside Issue Parser .....  reached here.....");
 
@@ -79,7 +79,7 @@ public class IssueParser {
             List<Map<String, Object>> components = (List<Map<String, Object>>) fields.get("components");
 
             for(Map<String, Object> component : components) {
-                int id = Integer.parseInt(String.valueOf(component.get("id")));
+                int id = Integer.parseInt(String.valueOf(component.get("developerId")));
                 String componentName = (String) component.get("name");
 
                 Component componentObject = new Component();
