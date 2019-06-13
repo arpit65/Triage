@@ -24,8 +24,6 @@ public class Executor {
     private List<IScheduler> schedulers;
 
     public void execute() {
-        System.out.println(schedulers.size());
-        System.out.println(schedulers);
         executor = Executors.newScheduledThreadPool(schedulers.size());
         for (IScheduler scheduler : schedulers) {
 //            executor.scheduleWithFixedDelay(scheduler, 0, 5000, TimeUnit.MILLISECONDS);

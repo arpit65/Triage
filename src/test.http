@@ -10,8 +10,8 @@ Content-Type: application/json
 ###
 
 #ISSUE API
-Content-Type: application/json
 GET https://jira.navis.com/rest/api/2/search?jql=project=10010&fields=key,summary,description,created,components,status,watches,issuetype,assignee&maxResults=1000&startAt=1000
+Content-Type: application/json
 Authorization: Basic amFpbm1vOk5hdmlzITEyMw==
 
 ###

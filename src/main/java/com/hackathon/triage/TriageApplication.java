@@ -10,7 +10,6 @@ public class TriageApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(TriageApplication.class, args);
-        System.out.println("HERE!");
 		Executor executor = applicationContext.getBean(Executor.class);
 		executor.execute();
 	}

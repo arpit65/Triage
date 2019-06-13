@@ -40,6 +40,8 @@ public class ProjectApiCaller extends AbstractBaseScheduler {
         headers.setBasicAuth(jiraConfig.getUserName(), jiraConfig.getPassword());
         HttpEntity<String> httpEntity = new HttpEntity<>("parameters", headers);
 
+        System.out.println("Inside Project API caller ::: ");
+
         try {
             ResponseEntity<String> result = restTemplate.exchange("https://jira.navis.com/rest/api/2/project/10010",
                     HttpMethod.GET,
