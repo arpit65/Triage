@@ -28,4 +28,12 @@ public class Component {
             joinColumns = @JoinColumn(name = "component_id", referencedColumnName = "componentId"),
             inverseJoinColumns = @JoinColumn(name = "issue_id", referencedColumnName = "issueId"))
     private List<Issue> issues;
+
+    public Component(Component c) {
+        System.out.println("Creating new component with someother component");
+        this.componentId = c.getComponentId();
+        this.componentName = c.getComponentName();
+        this.issues = c.getIssues();
+        System.out.println("End of new component");
+    }
 }
