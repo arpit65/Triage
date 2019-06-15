@@ -1,11 +1,9 @@
 package com.hackathon.triage.controller;
 
+import com.hackathon.triage.domain.Issue;
 import com.hackathon.triage.service.TriageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class BaseController {
     @PostMapping(value = "", consumes = "application/json", produces = "application/json")
     public List<String> returnBestPersonToTriageThisIssue(@RequestBody String argoNumber) {
         return triageService.returnBestPersonToTriageThisIssue(argoNumber);
+    }
+
+    @GetMapping
+    public Issue getIssueByNumber(@RequestBody String argoNumber) {
+        return triageService.getIssueByNumber(argoNumber);
     }
 }

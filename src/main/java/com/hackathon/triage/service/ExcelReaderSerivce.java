@@ -1,5 +1,7 @@
-package com.hackathon.triage.excelreader;
+package com.hackathon.triage.service;
 
+import com.hackathon.triage.excelreader.ExcelReader;
+import com.hackathon.triage.excelreader.ExcelReaderRepository;
 import com.hackathon.triage.excelreader.domain.ExcelComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,7 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-public class ExcelReaderSerivce {
+public class ExcelReaderSerivce implements IExcelReader {
 
     @Autowired
     private ExcelReaderRepository repo;
@@ -23,6 +25,7 @@ public class ExcelReaderSerivce {
         loadExcelValuesIntoDb();
     }
 
+    @Override
     public void loadExcelValuesIntoDb() {
         Map<String, ExcelComponent> excelValues = reader.loadExcelValues();
         List<ExcelComponent> collect = excelValues.entrySet().stream().map(Map.Entry::getValue).collect(Collectors.toList());
