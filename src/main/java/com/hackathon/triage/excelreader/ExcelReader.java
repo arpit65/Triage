@@ -77,7 +77,7 @@ public class ExcelReader {
                             count++;
                         }
                     }
-                }else {
+                } else {
                 int countForInserting = 0;
                 String developerName = " ";
                 while (cellIterator.hasNext() && countForInserting < count) {
@@ -94,25 +94,20 @@ public class ExcelReader {
                     if (currentCell.getCellType() == Cell.CELL_TYPE_BLANK) {
                         allComponents.get(orderOfComponents.get(countForInserting)).updateTopicPoints(orderOfTopics.get(countForInserting), developerName, 0);
                         countForInserting++;
-                        continue;
                     } else {
                         if (currentCell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
                             allComponents.get(orderOfComponents.get(countForInserting)).updateTopicPoints(orderOfTopics.get(countForInserting), developerName, (int) currentCell.getNumericCellValue()*10);
                             countForInserting++;
-                            continue;
                         }
                     }
                 }
             }
 
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return allComponents;
-//        System.out.println(allComponents.get("A4").getTopics());
     }
 }
